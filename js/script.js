@@ -1,23 +1,25 @@
-<!Doctype html>
-<html>
+const mainContainer = document.querySelector("main")
+const data = [{
+  title: "toaster",
+  img: "./imgs/toaster.jpeg",
+  description: "nice toaster"
+}, {
+  title: "fridge",
+  img: "./imgs/fridge.jpeg",
+  description: "nice fridge"
+}, {
+  title: "microwave",
+  img: "./imgs/microwave.jpeg",
+  description: "amazing microwave"
+}]
 
-<head>
-  <title>E-commerce</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
+function load() {
+  mainContainer.innerHTML = ""
+  for (let i = 0; i <= data.length - 1; i++) {
 
-<body>
-  <header>
-    <h1>Brand</h1>
-    <nav>
-      <li>home</li>
-      <li>about</li>
-      <li>acc</li>
-    </nav>
-  </header>
-  <main>
-    <div class="card">
-      <img src="./imgs/eccommerce.jpg" alt="bag" />
+    mainContainer.innerHTML += `
+  <div class="card">
+      <img src="${data[i].img}" alt="bag" />
       <div id="color-container">
         <div id="first-color" class="colors"></div>
         <div id="second-color" class="colors"></div>
@@ -25,7 +27,7 @@
         <div id="fourth-color" class="colors"></div>
 
       </div>
-      <h1>bella Fits-Anywhere™ Slim Toaster, 2 Slice Extra Long & Wide Slot, Oatmilk</h1>
+      <h1>${data[i].title}</h1>
       <div class="secondary">
         <p>4.2</p>
         <div class="stars">
@@ -36,7 +38,7 @@
         </div>
         <p>(13.4k)</p>
       </div>
-      <p>30K+ bought in past month</p>
+      <p>${data[i].description}</p>
       <button>
         <a href="https://www.amazon.com/Toaster-Fits-anywhereTM-Kitchenware-Setting-Removable/dp/B0CYJBB2JQ">
           See Options
@@ -44,10 +46,8 @@
       </button>
 
     </div>
+`
+  }
+}
 
-  </main>
-  <button id="btn"> HELLO</button>
-  <script src="js/script.js"></script>
-</body>
-
-</html>
+load()

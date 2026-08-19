@@ -46,7 +46,10 @@ header {
   }
 }
 
+
+
 main {
   padding-top: 20vh;
-  height: 300vh;
+  display: flex;
+  flex-direction: row;
 }
